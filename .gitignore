@@ -11,3 +11,4 @@ wheels/
 dataset.zip
 .env
 logs/
+data/

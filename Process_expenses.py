@@ -3,7 +3,7 @@
 # 
 # **Business request:** Combine five months of expense files from four departments, clean their inconsistent labels, take an audit sample, summarize approved spending, and export English and Korean reports.
 # 
-# > Run this notebook from the repository root. The data is synthetic.
+# > Run this notebook from the repository rootss. The data is synthetic.
 
 # %% [markdown]
 # ## Before we get started
@@ -323,6 +323,7 @@ transformed_df[transformed_df.isnull().any(axis=1)].to_excel("outputs/missing_va
 # %%
 audit_sample = transformed_df.sample(n=100, random_state=50)
 transformed_df.sort_values(by='amount_krw',ascending=False)
+largest_expenses = transformed_df.sort_values(by='amount_krw',ascending=False)
 
 #print(audit_sample.head())
 print(largest_expenses[["transaction_id", "department", "category", "amount_krw"]])
